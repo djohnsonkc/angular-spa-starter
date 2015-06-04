@@ -6,18 +6,24 @@ Using Grunt to concat, minify and uglify assets. Ideally, serve one JavaScript f
 
 Local Environment Setup
 ------------------
-
 Use "npm install" to read the package.json file and install all of dev dependencies
+
+$ npm install
 
 
 Grunt
 -------------------
-Using Grunt to concat and minify scripts
+Using Grunt to concat and minify css and scripts
 
-e.g. from the command line - this will run the Gruntfile.js and pickup any changes 
-$ grunt
+Use the "grunt" command to create concatenated, minified and uglified versions of the assets 
+
+$ grunt 
+
+See the Gruntfile.js file for more info
+
 
 After running grunt, start the app
+
 $ node app
 
 
