@@ -1,10 +1,25 @@
 
 Angular SPA Template
-Using Grunt to concat, minify and uglify assets. Ideally, serve one JavaScript file and one CSS file to client
+------------------
+#Using Grunt to concat, minify and uglify assets. Ideally, serve one JavaScript file and one CSS file to client
 
 
-Local Setup
+Local Environment Setup
+------------------
 
-Install all of the Grunt modules
+#Use "npm install" to read the package.json file and install all of dev dependencies
 
-npm install
+
+Grunt
+-------------------
+#Using Grunt to concat and minify scripts
+
+##e.g. from the command line - this will run the Gruntfile.js and pickup any changes 
+$ grunt
+
+##After running grunt, start the app
+$ node app
+
+
+
+
