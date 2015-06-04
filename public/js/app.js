@@ -26,14 +26,19 @@ app.config(function($routeProvider) {
 
 // create the controller and inject Angular's $scope
 app.controller('mainController', function($scope) {
-	// create a message to display in our view
-	$scope.message = 'Everyone come and see how good I look!';
+	//create a message to display in our view
+	//not a good idea to mix content and script - keep the concerns separated
+	$scope.message = 'Welcome to our home page!';
 });
 
 app.controller('aboutController', function($scope) {
-	$scope.message = 'Look! I am an about page.';
+	// create a message to display in our view
+	//not a good idea to mix content and script - keep the concerns separated
+	$scope.message = 'Welcome to our about page!';
 });
 
 app.controller('contactController', function($scope) {
-	$scope.message = 'Contact us! JK. This is just a demo.';
+	//create a message to display in our view
+	//not a good idea to mix content and script - keep the concerns separated
+	$scope.message = 'Welcome to our contact page!';
 });
