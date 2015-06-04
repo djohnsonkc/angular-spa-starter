@@ -19,7 +19,11 @@ module.exports = function (grunt) {
                     { 
                         //files for core angular files
                         src: [  
-                            'public/js/libs/*',
+                            //These must be in the correct order
+                            'public/js/libs/jquery.min.js',
+                            'public/js/libs/bootstrap.min.js',
+                            'public/js/libs/angular.min.js',
+                            'public/js/libs/angular-route.js',
                             'public/js/app.js'
                         ], 
 
