@@ -1,0 +1,33 @@
+{
+  "name": "foxfilterapp.com",
+  "version": "1.0.0",
+  "description": "foxfilterapp.com =================",
+  "main": "app.js",
+  "dependencies": {
+    "compression": "^1.4.4",
+    "express": "^4.12.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-htmlcompressor": "^0.1.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djohnsonkc/foxfilterapp.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djohnsonkc/foxfilterapp.com.git/issues"
+  },
+  "homepage": "https://github.com/djohnsonkc/foxfilterapp.com.git"
+}
