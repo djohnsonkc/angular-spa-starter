@@ -24,8 +24,12 @@ module.exports = function (grunt) {
                             'public/js/libs/bootstrap.min.js',
                             'public/js/libs/angular.min.js',
                             'public/js/libs/angular-route.js',
+                            'public/js/libs/angular-cookie.js', 
+                            'public/js/libs/angular-resource.min.js', 
+                            'public/js/libs/angular-cookies.min.js', 
+                            'public/js/libs/ui-bootstrap-tpls-0.10.0.min.js',
                             'public/js/app.js'
-                        ], 
+                            ], 
 
                         dest: 'public/js/dist/app-concat.js' 
                     }
@@ -80,8 +84,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks("grunt-processhtml");
+    //grunt.loadNpmTasks('grunt-contrib-watch');
+    //grunt.loadNpmTasks("grunt-processhtml");
 
     // 3. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['concat', 'cssmin', 'uglify']);
