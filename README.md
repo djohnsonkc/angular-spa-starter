@@ -1,7 +1,9 @@
 
 Angular SPA Template
 ------------------
-Using Grunt to concat, minify and uglify assets. Ideally, serve one JavaScript file and one CSS file to client
+Using Grunt to concat, minify and uglify assets. Ideally, serve one JavaScript file and one CSS file to the client. 
+
+The Node.js compression module will provide compression of files to the client.
 
 
 Local Environment Setup

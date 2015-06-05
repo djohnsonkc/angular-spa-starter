@@ -1,5 +1,5 @@
 // create the module and name it app
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ipCookie', 'ngResource', 'ui.bootstrap']);
 
 // configure our routes
 app.config(function($routeProvider) {
@@ -24,21 +24,3 @@ app.config(function($routeProvider) {
 		});
 });
 
-// create the controller and inject Angular's $scope
-app.controller('mainController', function($scope) {
-	//create a message to display in our view
-	//not a good idea to mix content and script - keep the concerns separated
-	$scope.message = 'Welcome to our home page!';
-});
-
-app.controller('aboutController', function($scope) {
-	// create a message to display in our view
-	//not a good idea to mix content and script - keep the concerns separated
-	$scope.message = 'Welcome to our about page!';
-});
-
-app.controller('contactController', function($scope) {
-	//create a message to display in our view
-	//not a good idea to mix content and script - keep the concerns separated
-	$scope.message = 'Welcome to our contact page!';
-});

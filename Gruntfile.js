@@ -28,7 +28,12 @@ module.exports = function (grunt) {
                             'public/js/libs/angular-resource.min.js', 
                             'public/js/libs/angular-cookies.min.js', 
                             'public/js/libs/ui-bootstrap-tpls-0.10.0.min.js',
-                            'public/js/app.js'
+
+                            //app.js goes first, then the controllers and factories
+                            'public/js/app.js',
+                            'public/js/controllers/*',
+                            'public/js/factories/*'
+                            
                             ], 
 
                         dest: 'public/js/dist/app-concat.js' 
