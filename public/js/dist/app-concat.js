@@ -1306,19 +1306,19 @@ app.config(function($routeProvider) {
 
 		// route for the home page
 		.when('/', {
-			templateUrl : 'pages/home.html',
+			templateUrl : 'html/pages/home.html',
 			controller  : 'mainController'
 		})
 
 		// route for the about page
 		.when('/about', {
-			templateUrl : 'pages/about.html',
+			templateUrl : 'html/pages/about.html',
 			controller  : 'aboutController'
 		})
 
 		// route for the contact page
 		.when('/contact', {
-			templateUrl : 'pages/contact.html',
+			templateUrl : 'html/pages/contact.html',
 			controller  : 'contactController'
 		});
 });
@@ -1356,14 +1356,14 @@ app.factory('cookieFactory', ['ipCookie', function(ipCookie) {
       _domain = ""; //doesnt work locally
     } 
     else {
-      _domain = ".foxfilterapp.com";
+      _domain = ".mydomain.com";
     }
     var _expires = 30;
     var _path = '/';
 
 
     _cookieFactory.setCookie = function(name, val, opts) {
-        //console.log("cookieFactory.setCookie(" + name + "," + val + ")");
+        //Accept options that are passed in. Otherwise, use the default values
         var options = {
           path: opts && opts.path || _path,
           expires: opts && opts.expires || _expires,
@@ -1375,29 +1375,21 @@ app.factory('cookieFactory', ['ipCookie', function(ipCookie) {
     _cookieFactory.getCookie = function(name) {
 
         var val = ipCookie(name) || null;
-        //console.log("cookieFactory.getCookie(" + name + ") = " + val);
         return val;
     }
 
     _cookieFactory.getAllCookies = function() {
 
       var x = document.cookie;  
-      //console.log("cookieFactory.getAllCookies: " + x);
       return x;
 
     }
 
     _cookieFactory.clearAllCookies = function() {
 
-        this.setCookie('access_token', '0');
-        this.setCookie('account_id', '0');
-        this.setCookie('auth_token', '');
-        this.setCookie('login', '0');
-        this.setCookie('profile_id', '0');
-        this.setCookie('profile_name', '');
-        this.setCookie('profile_set', '');
-        this.setCookie('user_name', '');
-        this.setCookie('version', '');
+        //need a better implementation here that will clear all cookies vs. deleting each one by name
+        this.setCookie('my_cookie', '');
+
     }
 
   return _cookieFactory;

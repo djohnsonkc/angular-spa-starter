@@ -62,7 +62,7 @@ module.exports = function (grunt) {
               collapseWhitespace: true
             },
             files: {                                   
-              'public/html/dist/index.html': 'public/index.html'
+              'public/html/dist/index.html': 'public/html/index.html'
             }
           }
 

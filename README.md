@@ -5,6 +5,11 @@ Using Grunt to concat, minify and uglify assets including css, JavaScript, image
 
 The Node.js compression module will provide compression of files to the client.
 
+YSlow
+------------------
+Using the YSlow extension for Google Chrome, this site currently gets an "A" grade at 99%! Thank you, Grunt :-)
+
+
 
 Local Environment Setup
 ------------------

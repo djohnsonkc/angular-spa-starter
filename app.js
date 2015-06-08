@@ -3,14 +3,16 @@ var compression = require('compression');
 
 var app = express();
 
-//use maxAge to enable caching by the client
-app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
+app.use(compression());
 
-//this will allow assets requested from the server to be compressed (images, scripts, css) 
-app.use(compression()); 
+//app.use(express.static(__dirname + '/public')); //dont cache while testing app
+//use maxAge to enable caching by the client
+var one_week = 7 * 24 * 60 * 60 * 1000;
+app.use(express.static(__dirname + '/public', { maxAge: one_week }));
+
 
 app.get('/', function (req, res) {
-    res.sendfile('public/index.html');
+    res.sendFile(__dirname + '/public/html/dist/index.html');
 });
 
 var port = process.env.PORT || 3000; // Use the port that Heroku provides or default to 5000
