@@ -1307,23 +1307,32 @@ app.config(function($routeProvider) {
 		// route for the home page
 		.when('/', {
 			templateUrl : 'html/pages/home.html',
-			controller  : 'mainController'
+			controller  : 'mainController',
+			title: 'Angular SPA Starter Project'
 		})
 
 		// route for the about page
 		.when('/about', {
 			templateUrl : 'html/pages/about.html',
-			controller  : 'aboutController'
+			controller  : 'aboutController',
+			title: 'About - Angular SPA Starter Project'
 		})
 
 		// route for the contact page
 		.when('/contact', {
 			templateUrl : 'html/pages/contact.html',
-			controller  : 'contactController'
+			controller  : 'contactController',
+			title: 'Contact - Angular SPA Starter Project'
 		});
 });
 
-
+//IMPORTANT: This is what changes the page title
+app.run(['$location', '$rootScope', function($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        $rootScope.title = current.$$route.title;
+        window.scrollTo(0,0); //this will refresh the scroll bar and show/hide it as necessary
+    });
+}]);
 
 app.controller('aboutController', function($scope) {
 	// create a message to display in our view
@@ -1346,16 +1355,13 @@ app.controller('mainController', ['$scope', '$rootScope', '$location', 'dataFact
 	$scope.message = 'Welcome to our home page!';
 
 
+	//This sets the appropriate nav link to active
 	$scope.isActive = function (viewLocation) {
-	    var s=false;
-
-	    console.log(viewLocation + " ?= " + $location.path());
-
+	    var active = false;
 	    if($location.path() === viewLocation){
-	     s = true;
-	     //console.log('found: ' + viewLocation);
+	    	active = true;
 	    }
-	    return s;
+	    return active;
 	};
 
 

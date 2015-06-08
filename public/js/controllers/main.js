@@ -6,16 +6,13 @@ app.controller('mainController', ['$scope', '$rootScope', '$location', 'dataFact
 	$scope.message = 'Welcome to our home page!';
 
 
+	//This sets the appropriate nav link to active
 	$scope.isActive = function (viewLocation) {
-	    var s=false;
-
-	    console.log(viewLocation + " ?= " + $location.path());
-
+	    var active = false;
 	    if($location.path() === viewLocation){
-	     s = true;
-	     //console.log('found: ' + viewLocation);
+	    	active = true;
 	    }
-	    return s;
+	    return active;
 	};
 
 
