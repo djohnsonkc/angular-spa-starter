@@ -1,6 +1,8 @@
 
-Angular SPA Template
+Angular SPA Starter Project
 ------------------
+
+See it live at http://angular-spa-starter.herokuapp.com
 
 This app is a template for creating an SPA (single-page app) using AngularJS. Node.js is used to serve the main index.html page. It is also used to provide Gzip compression and enable client-side, browser caching of assets to clients making requests to the app. 
 
