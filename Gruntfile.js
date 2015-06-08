@@ -88,7 +88,7 @@ module.exports = function (grunt) {
                   cwd: 'public/img/',
                   src: ['**/*.png'],
                   // Could also match cwd line above. i.e. project-directory/img/
-                  dest: 'public/img/compressed/',
+                  dest: 'public/img/dist/',
                   ext: '.png'
                 }
               ]
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
                   cwd: 'public/img/',
                   src: ['**/*.jpg'],
                   // Could also match cwd. i.e. project-directory/img/
-                  dest: 'public/img/compressed/',
+                  dest: 'public/img/dist/',
                   ext: '.jpg'
                 }
               ]
@@ -122,7 +122,7 @@ module.exports = function (grunt) {
                   cwd: 'public/img/',
                   src: ['**/*.gif'],
                   // Could also match cwd. i.e. project-directory/img/
-                  dest: 'public/img/compressed/',
+                  dest: 'public/img/dist/',
                   ext: '.gif'
                 }
               ]

@@ -7,11 +7,12 @@ app.use(compression());
 
 //app.use(express.static(__dirname + '/public')); //dont cache while testing app
 //use maxAge to enable caching by the client
-var one_week = 7 * 24 * 60 * 60 * 1000;
-app.use(express.static(__dirname + '/public', { maxAge: one_week }));
+var one_day = 86400000; //or 24 * 60 * 60 * 1000;
+app.use(express.static(__dirname + '/public', { maxAge: one_day }));
 
 
 app.get('/', function (req, res) {
+	//serve the minified file
     res.sendFile(__dirname + '/public/html/dist/index.html');
 });
 
