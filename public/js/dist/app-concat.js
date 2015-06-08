@@ -1353,7 +1353,7 @@ app.controller('mainController', ['$scope', '$rootScope', '$location', 'dataFact
 
 	    if($location.path() === viewLocation){
 	     s = true;
-	     console.log('found: ' + viewLocation);
+	     //console.log('found: ' + viewLocation);
 	    }
 	    return s;
 	};
