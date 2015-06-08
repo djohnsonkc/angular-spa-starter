@@ -48,15 +48,88 @@ module.exports = function (grunt) {
             css: {
                 src: 'public/css/dist/app-concat.css',
                 dest: 'public/css/dist/app.min.css'
+            },
+            options: {
+                keepSpecialComments: 0
             }
         },
-        // processhtml: {
-        //     dist: {
-        //           files: {
-        //             '<%= pkg.dest %>/magic.html': ['<%= pkg.src %>/magic.html']
-        //           }
-        //     }
-        // },
+
+
+        htmlmin: {                                     // Task
+          dist: {                                      // Target
+            options: {                                 // Target options
+              removeComments: true,
+              collapseWhitespace: true
+            },
+            files: {                                   
+              'public/html/dist/index.html': 'public/index.html'
+            }
+          }
+
+          // dev: {                                       // Another target
+          //   files: {
+          //     'dist/index.html': 'src/index.html',
+          //     'dist/contact.html': 'src/contact.html'
+          //   }
+          // }
+        },
+
+
+        imagemin: {
+            png: {
+              options: {
+                optimizationLevel: 7
+              },
+              files: [
+                {
+                  // Set to true to enable the following options…
+                  expand: true,
+                  // cwd is 'current working directory'
+                  cwd: 'public/img/',
+                  src: ['**/*.png'],
+                  // Could also match cwd line above. i.e. project-directory/img/
+                  dest: 'public/img/compressed/',
+                  ext: '.png'
+                }
+              ]
+            },
+            jpg: {
+              options: {
+                progressive: true
+              },
+              files: [
+                {
+                  // Set to true to enable the following options…
+                  expand: true,
+                  // cwd is 'current working directory'
+                  cwd: 'public/img/',
+                  src: ['**/*.jpg'],
+                  // Could also match cwd. i.e. project-directory/img/
+                  dest: 'public/img/compressed/',
+                  ext: '.jpg'
+                }
+              ]
+            },
+            gif: {
+              options: {
+                progressive: true
+              },
+              files: [
+                {
+                  // Set to true to enable the following options…
+                  expand: true,
+                  // cwd is 'current working directory'
+                  cwd: 'public/img/',
+                  src: ['**/*.gif'],
+                  // Could also match cwd. i.e. project-directory/img/
+                  dest: 'public/img/compressed/',
+                  ext: '.gif'
+                }
+              ]
+            }
+        },
+
+
         uglify: {
             js: {
 
@@ -89,10 +162,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    //grunt.loadNpmTasks('grunt-contrib-watch');
-    //grunt.loadNpmTasks("grunt-processhtml");
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks("grunt-contrib-htmlmin");
 
     // 3. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'cssmin', 'uglify']);
+    //grunt.registerTask('default', ['concat', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);
 
 };
