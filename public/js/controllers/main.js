@@ -4,10 +4,6 @@ app.controller('mainController', ['$scope', '$rootScope', '$location', 'dataFact
 
 	$scope.pageClass = 'page-home';
 
-
-	$scope.message = 'Welcome to our home page!';
-
-
 	//This sets the appropriate nav link to active
 	$scope.isActive = function (viewLocation) {
 	    var active = false;
