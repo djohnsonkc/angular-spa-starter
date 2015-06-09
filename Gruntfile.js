@@ -182,7 +182,7 @@ module.exports = function (grunt) {
     // 3. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['concat', 'cssmin', 'uglify']);
     //grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);
-    grunt.registerTask('default', ['clean', 'concat', 'cssmin', 'uglify', 'htmlmin']);
+    grunt.registerTask('default', ['clean', 'concat', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);
 
 
 
