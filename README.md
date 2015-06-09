@@ -17,6 +17,13 @@ We will also use Node.js to provide a maxAge response header so that assets can 
 var one_day = 86400000; //or 24 * 60 * 60 * 1000;
 app.use(express.static(__dirname + '/public', { maxAge: one_day }));
 
+Angular Animation
+------------------
+
+Here's a great article on a simple scaleUp page transition, which is used in this project.
+
+http://www.sitepoint.com/adding-css-animations-angularjs-applications/
+
 
 YSlow
 ------------------
