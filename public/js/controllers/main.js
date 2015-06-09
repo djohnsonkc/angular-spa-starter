@@ -2,8 +2,6 @@
 app.controller('mainController', ['$scope', '$rootScope', '$location', 'dataFactory', 'cookieFactory', 
     function ($scope, $rootScope, $location, dataFactory, cookieFactory) {
 
-	$scope.pageClass = 'page-home';
-
 	//This sets the appropriate nav link to active
 	$scope.isActive = function (viewLocation) {
 	    var active = false;

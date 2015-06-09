@@ -1365,7 +1365,6 @@ app.run(['$location', '$rootScope', function($location, $rootScope) {
 
 app.controller('aboutController', function($scope) {
 
-	$scope.pageClass = 'page-about';
 
 });
 
@@ -1373,18 +1372,11 @@ app.controller('aboutController', function($scope) {
 
 app.controller('contactController', function($scope) {
 
-	$scope.pageClass = 'page-contact';
 
 });
 // create the controller and inject Angular's $scope
 app.controller('mainController', ['$scope', '$rootScope', '$location', 'dataFactory', 'cookieFactory', 
     function ($scope, $rootScope, $location, dataFactory, cookieFactory) {
-
-	$scope.pageClass = 'page-home';
-
-
-	$scope.message = 'Welcome to our home page!';
-
 
 	//This sets the appropriate nav link to active
 	$scope.isActive = function (viewLocation) {
