@@ -1,5 +1,5 @@
 // create the module and name it app
-var app = angular.module('app', ['ngRoute', 'ipCookie', 'ngResource', 'ui.bootstrap']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'ipCookie', 'ngResource', 'ui.bootstrap']);
 
 // configure our routes
 app.config(function($routeProvider) {

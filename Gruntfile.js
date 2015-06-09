@@ -39,6 +39,7 @@ module.exports = function (grunt) {
                             'public/js/libs/angular-cookie.js', 
                             'public/js/libs/angular-resource.min.js', 
                             'public/js/libs/angular-cookies.min.js', 
+                            'public/js/libs/angular-animate.min.js', 
                             'public/js/libs/ui-bootstrap-tpls-0.10.0.min.js',
 
                             //app.js goes first, then the controllers and factories
