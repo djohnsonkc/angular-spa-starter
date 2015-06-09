@@ -3,6 +3,18 @@ module.exports = function (grunt) {
     // 1. All configuration goes here 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+
+        clean : {
+            yourTarget : {
+                src : [ "public/img/dist/*", 
+                        "public/html/dist/*", 
+                        "public/css/dist/*",
+                        "public/js/dist/*"
+                ]
+            }
+        },
+
         concat: {
             css: {
                 //files for the home page - Rook theme
@@ -159,17 +171,18 @@ module.exports = function (grunt) {
     });
 
     // 2. Where we tell Grunt we plan to use this plug-in.
+    grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     //grunt.loadNpmTasks('grunt-contrib-watch');
-    //grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks("grunt-contrib-htmlmin");
 
     // 3. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['concat', 'cssmin', 'uglify']);
     //grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);
-    grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'htmlmin']);
+    grunt.registerTask('default', ['clean', 'concat', 'cssmin', 'uglify', 'htmlmin']);
 
 
 
