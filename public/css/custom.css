@@ -1,0 +1,9 @@
+/* 
+Created by Dywayne Johnson  on July 17, 2014
+*/
+
+
+/* this overrides the font face with the Lato font */
+/* make sure the lato-font.css is referenced */
+body{font-family: 'Lato', sans-serif;text-rendering: optimizeLegibility;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'Lato', sans-serif;color:#585858;}

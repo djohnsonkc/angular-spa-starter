@@ -17,9 +17,11 @@ module.exports = function (grunt) {
 
         concat: {
             css: {
-                //files for the home page - Rook theme
                 src: [
-                    'public/css/*'
+                    'public/css/bootstrap.min.css',
+                    //'public/css/font-awesome.css', //not included for now
+                    'public/css/lato-font.css', //download of http://fonts.googleapis.com/css?family=Lato:300,400,700
+                    'public/css/custom.css' 
                 ],
                 dest: 'public/css/dist/app-concat.css'
 
