@@ -38,7 +38,6 @@ module.exports = function (grunt) {
                             'public/js/libs/bootstrap.min.js',
                             'public/js/libs/angular.min.js',
                             'public/js/libs/angular-route.js',
-                            'public/js/libs/angular-cookie.js', 
                             'public/js/libs/angular-resource.min.js', 
                             'public/js/libs/angular-cookies.min.js', 
                             'public/js/libs/angular-animate.min.js', 

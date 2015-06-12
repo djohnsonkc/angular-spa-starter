@@ -1,5 +1,5 @@
 // create the module and name it app
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'ipCookie', 'ngResource', 'ui.bootstrap']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'ngCookies', 'ngResource', 'ui.bootstrap']);
 
 // configure our routes
 app.config(function($routeProvider) {
@@ -27,8 +27,28 @@ app.config(function($routeProvider) {
 		});
 });
 
-//IMPORTANT: This is what changes the page title
+
 app.run(['$location', '$rootScope', function($location, $rootScope) {
+
+	//this is how you can enforce login on the entire site, or just for portions of it such as account features (e.g. /account)
+	//make sure and set $rootScope.loggedInUser=true on the signin page. Set to null as default and on signout
+    $rootScope.$on('$routeChangeStart', function(event, next, current) {
+    
+      // if (!$rootScope.loggedInUser) {
+        
+      //   //if not a signin or signup page
+      //   if (next.templateUrl == "html/pages/signin.html" ||
+      //   	next.templateUrl == "html/pages/signup.html") {
+      //   	//dont redirect to signin
+      //   } 
+      //   else {
+      //     $location.path("/signin");
+      //   }
+      // }
+
+    });
+
+	//IMPORTANT: This is what changes the page title
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
         $rootScope.title = current.$$route.title;
         window.scrollTo(0,0); //this will refresh the scroll bar and show/hide it as necessary
