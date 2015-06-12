@@ -11,27 +11,32 @@ app.factory('cookieFactory', ['$cookies', function($cookies) {
       _domain = ".hmklab.com";
     }
 
-    var _expires = new Date() + 7; //one week in seconds
-    var _maxAge = 86400000 //1 day in milliseconds
-    var _expirationUnit = "seconds";//hours, minutes, seconds
+    var _maxAge = 86400 //1 day in seconds
     var _path = '/';
 
     _cookieFactory.getExpiration = function(maxAgeSeconds) {
 
+     
       var now = new Date();
       var time = now.getTime();
-      var expireTime = time + maxAgeSeconds;
-      now.setTime(expireTime);
-      
+      time += maxAgeSeconds * 1000; //multiple seconds by 1000 to get milliseconds
+      now.setTime(time);
+
+      //remember this is GMT, which is ahead of CST - the browser will figure out the corret expiration
+      //for example, 1:00 PM CST = 6:00 PM GMT
       return now.toGMTString();
 
     }
 
     _cookieFactory.setCookie = function(name, val, opts) {
 
+
+      console.log("opts: " + JSON.stringify(opts));
+
         var expires;
         if(opts && opts.maxAge) {
           expires = this.getExpiration(opts.maxAge);
+          console.log("expires: " + expires);
         }
         else {
           expires = this.getExpiration(_maxAge);
