@@ -1,5 +1,5 @@
 // create the controller and inject Angular's $scope
-app.controller('mainController', ['$scope', '$rootScope', '$location', 'dataFactory', 'cookieFactory', 
+app.controller('indexController', ['$scope', '$rootScope', '$location', 'dataFactory', 'cookieFactory', 
     function ($scope, $rootScope, $location, dataFactory, cookieFactory) {
 
 	//This sets the appropriate nav link to active
@@ -13,4 +13,3 @@ app.controller('mainController', ['$scope', '$rootScope', '$location', 'dataFact
 
 
 }]);
-

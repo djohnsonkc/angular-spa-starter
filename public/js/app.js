@@ -8,7 +8,7 @@ app.config(function($routeProvider) {
 		// route for the home page
 		.when('/', {
 			templateUrl : 'html/pages/home.html',
-			controller  : 'mainController',
+			controller  : 'homeController',
 			title: 'Angular SPA Starter Project'
 		})
 
