@@ -2,6 +2,8 @@
 app.controller('homeController', ['$scope', '$rootScope', '$location', 'dataFactory', 'cookieFactory', 
     function ($scope, $rootScope, $location, dataFactory, cookieFactory) {
 
+    console.log("-------------------- home.js ------------------------")
+
 	//This sets the appropriate nav link to active
 	// $scope.isActive = function (viewLocation) {
 	//     var active = false;
