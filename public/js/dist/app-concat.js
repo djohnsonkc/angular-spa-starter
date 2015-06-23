@@ -1368,6 +1368,7 @@ app.run(['$location', '$rootScope', function($location, $rootScope) {
 
 app.controller('aboutController', function($scope) {
 
+    console.log("-------------------- about.js ------------------------")
 
 });
 
@@ -1375,11 +1376,14 @@ app.controller('aboutController', function($scope) {
 
 app.controller('contactController', function($scope) {
 
+    console.log("-------------------- contact.js ------------------------")
 
 });
 // create the controller and inject Angular's $scope
 app.controller('homeController', ['$scope', '$rootScope', '$location', 'dataFactory', 'cookieFactory', 
     function ($scope, $rootScope, $location, dataFactory, cookieFactory) {
+
+    console.log("-------------------- home.js ------------------------")
 
 	//This sets the appropriate nav link to active
 	// $scope.isActive = function (viewLocation) {

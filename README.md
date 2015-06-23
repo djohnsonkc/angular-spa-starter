@@ -4,9 +4,13 @@ Angular SPA Starter Project
 
 See it live at http://angular-spa-starter.herokuapp.com
 
-This app is a template for creating an SPA (single-page app) using AngularJS. Node.js is used to serve the main index.html page. It is also used to provide Gzip compression and enable client-side, browser caching of assets to clients making requests to the app. 
+This app is a starter project for creating an SPA (single-page app) using AngularJS, which includes a nice 'scaleUp' animation for view changes and a variety of performance optimization tips and features. Node.js is used to serve the SPA and is also used to provide other server-side features such as Gzip compression and enable client-side browser caching of assets to clients making requests to the app. 
 
-Grunt is used to concat, minify and uglify assets including css, JavaScript, images and HTML. Ideally, serve one minified and compressed JavaScript file and one minified CSS file to the client. 
+Hopefully, this project will give you a good start using AngularJS to create SPA's, but with additional help in wrestling with all of the other things that go into making a performant, production-ready web app.
+
+
+Node.js
+-------------------
 
 The Node.js compression module will provide compression of files to the client. 
 
@@ -47,7 +51,8 @@ $ npm install
 
 Grunt
 -------------------
-Using Grunt to concat and minify css and scripts
+
+Grunt is used to concat, minify and uglify assets including css, JavaScript, images and HTML. Ideally, serve one minified and compressed JavaScript file and one minified CSS file to the client. 
 
 Use the "grunt" command to create concatenated, minified and uglified versions of the assets 
 
