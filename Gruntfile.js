@@ -1,5 +1,7 @@
 module.exports = function (grunt) {
 
+    var mozjpeg = require('imagemin-mozjpeg');
+
     // 1. All configuration goes here 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -90,56 +92,70 @@ module.exports = function (grunt) {
 
 
         imagemin: {
-            png: {
-              options: {
-                optimizationLevel: 7
+            // png: {
+            //   options: {
+            //     optimizationLevel: 7
+            //   },
+            //   files: [
+            //     {
+            //       // Set to true to enable the following options…
+            //       expand: true,
+            //       // cwd is 'current working directory'
+            //       cwd: 'public/img/',
+            //       src: ['**/*.png'],
+            //       // Could also match cwd line above. i.e. project-directory/img/
+            //       dest: 'public/img/dist/',
+            //       ext: '.png'
+            //     }
+            //   ]
+            // },
+            // jpg: {
+            //   options: {
+            //     progressive: true
+            //   },
+            //   files: [
+            //     {
+            //       // Set to true to enable the following options…
+            //       expand: true,
+            //       // cwd is 'current working directory'
+            //       cwd: 'public/img/',
+            //       src: ['**/*.jpg'],
+            //       // Could also match cwd. i.e. project-directory/img/
+            //       dest: 'public/img/dist/',
+            //       ext: '.jpg'
+            //     }
+            //   ]
+            // },
+            // gif: {
+            //   options: {
+            //     progressive: true
+            //   },
+            //   files: [
+            //     {
+            //       // Set to true to enable the following options…
+            //       expand: true,
+            //       // cwd is 'current working directory'
+            //       cwd: 'public/img/',
+            //       src: ['**/*.gif'],
+            //       // Could also match cwd. i.e. project-directory/img/
+            //       dest: 'public/img/dist/',
+            //       ext: '.gif'
+            //     }
+            //   ]
+            // }
+
+            dynamic: {                         // Another target
+              options: {                       // Target options
+                optimizationLevel: 3,
+                svgoPlugins: [{ removeViewBox: false }],
+                use: [mozjpeg()]
               },
-              files: [
-                {
-                  // Set to true to enable the following options…
-                  expand: true,
-                  // cwd is 'current working directory'
-                  cwd: 'public/img/',
-                  src: ['**/*.png'],
-                  // Could also match cwd line above. i.e. project-directory/img/
-                  dest: 'public/img/dist/',
-                  ext: '.png'
-                }
-              ]
-            },
-            jpg: {
-              options: {
-                progressive: true
-              },
-              files: [
-                {
-                  // Set to true to enable the following options…
-                  expand: true,
-                  // cwd is 'current working directory'
-                  cwd: 'public/img/',
-                  src: ['**/*.jpg'],
-                  // Could also match cwd. i.e. project-directory/img/
-                  dest: 'public/img/dist/',
-                  ext: '.jpg'
-                }
-              ]
-            },
-            gif: {
-              options: {
-                progressive: true
-              },
-              files: [
-                {
-                  // Set to true to enable the following options…
-                  expand: true,
-                  // cwd is 'current working directory'
-                  cwd: 'public/img/',
-                  src: ['**/*.gif'],
-                  // Could also match cwd. i.e. project-directory/img/
-                  dest: 'public/img/dist/',
-                  ext: '.gif'
-                }
-              ]
+              files: [{
+                expand: true,                  // Enable dynamic expansion
+                cwd: 'public/img/',                   // Src matches are relative to this path
+                src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                dest: 'public/img/dist/'                  // Destination path prefix
+              }]
             }
         },
 
