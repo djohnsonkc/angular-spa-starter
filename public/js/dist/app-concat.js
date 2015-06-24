@@ -1335,7 +1335,14 @@ app.config(function($routeProvider) {
 			templateUrl : 'html/pages/contact.html',
 			controller  : 'contactController',
 			title: 'Contact - Angular SPA Starter Project'
-		});
+		})
+
+		.when('/tips', {
+			templateUrl : 'html/pages/tips.html',
+			title: 'Tips - Angular SPA Starter Project'
+		})
+
+		;//keep the final semi-colon here 
 });
 
 
