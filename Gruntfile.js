@@ -60,15 +60,15 @@ module.exports = function (grunt) {
                 }
             }
         },
-        // cssmin: {
-        //     css: {
-        //         src: 'public/css/dist/app-concat.css',
-        //         dest: 'public/css/dist/app.min.css'
-        //     },
-        //     options: {
-        //         keepSpecialComments: 0
-        //     }
-        // },
+        cssmin: {
+            css: {
+                src: 'public/css/dist/app-concat.css',
+                dest: 'public/css/dist/app.min.css'
+            },
+            options: {
+                keepSpecialComments: 0
+            }
+        },
 
 
         htmlmin: {                                     // Task
@@ -91,22 +91,73 @@ module.exports = function (grunt) {
         },
 
 
-        // imagemin: {
+        imagemin: {
+            // png: {
+            //   options: {
+            //     optimizationLevel: 7
+            //   },
+            //   files: [
+            //     {
+            //       // Set to true to enable the following options…
+            //       expand: true,
+            //       // cwd is 'current working directory'
+            //       cwd: 'public/img/',
+            //       src: ['**/*.png'],
+            //       // Could also match cwd line above. i.e. project-directory/img/
+            //       dest: 'public/img/dist/',
+            //       ext: '.png'
+            //     }
+            //   ]
+            // },
+            // jpg: {
+            //   options: {
+            //     progressive: true
+            //   },
+            //   files: [
+            //     {
+            //       // Set to true to enable the following options…
+            //       expand: true,
+            //       // cwd is 'current working directory'
+            //       cwd: 'public/img/',
+            //       src: ['**/*.jpg'],
+            //       // Could also match cwd. i.e. project-directory/img/
+            //       dest: 'public/img/dist/',
+            //       ext: '.jpg'
+            //     }
+            //   ]
+            // },
+            // gif: {
+            //   options: {
+            //     progressive: true
+            //   },
+            //   files: [
+            //     {
+            //       // Set to true to enable the following options…
+            //       expand: true,
+            //       // cwd is 'current working directory'
+            //       cwd: 'public/img/',
+            //       src: ['**/*.gif'],
+            //       // Could also match cwd. i.e. project-directory/img/
+            //       dest: 'public/img/dist/',
+            //       ext: '.gif'
+            //     }
+            //   ]
+            // }
 
-        //     dynamic: {                         // Another target
-        //       options: {                       // Target options
-        //         optimizationLevel: 3,
-        //         svgoPlugins: [{ removeViewBox: false }],
-        //         use: [mozjpeg()]
-        //       },
-        //       files: [{
-        //         expand: true,                  // Enable dynamic expansion
-        //         cwd: 'public/img/',                   // Src matches are relative to this path
-        //         src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-        //         dest: 'public/img/dist/'                  // Destination path prefix
-        //       }]
-        //     }
-        // },
+            dynamic: {                         // Another target
+              options: {                       // Target options
+                optimizationLevel: 3,
+                svgoPlugins: [{ removeViewBox: false }],
+                use: [mozjpeg()]
+              },
+              files: [{
+                expand: true,                  // Enable dynamic expansion
+                cwd: 'public/img/',                   // Src matches are relative to this path
+                src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                dest: 'public/img/dist/'                  // Destination path prefix
+              }]
+            }
+        },
 
 
         uglify: {
@@ -147,8 +198,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-htmlmin");
 
     // 3. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    //grunt.registerTask('default', ['clean', 'concat', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);
-    grunt.registerTask('default', ['clean', 'concat', 'uglify', 'htmlmin']);
+    //grunt.registerTask('default', ['concat', 'cssmin', 'uglify']);
+    //grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);
+    grunt.registerTask('default', ['clean', 'concat', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);
+
 
 
 };
