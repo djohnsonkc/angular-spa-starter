@@ -3,13 +3,16 @@ app.factory('cookieFactory', ['$cookies', function($cookies) {
   var _cookieFactory = {};
 
 
-    var _domain = window.location.hostname;            
+    var _domain = window.location.hostname;      
+
     if(_domain == "localhost") {
       _domain = ""; //doesnt work locally
     } 
     else {
-      _domain = ".hmklab.com";
+      var domainParts = _domain.split('.');
+      _domain = "." + domainParts[1] + "." + domainParts[2]
     }
+    console.log("_domain: " + _domain);
 
     var _maxAge = 86400 //1 day in seconds
     var _path = '/';
