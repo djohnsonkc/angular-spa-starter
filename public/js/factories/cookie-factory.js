@@ -60,12 +60,11 @@ app.factory('cookieFactory', ['$cookies', function($cookies) {
 
     _cookieFactory.clearAllCookies = function() {
 
-        //need a better implementation here that will clear all cookies vs. deleting each one by name
-        this.setCookie('account_id', '');
-        this.setCookie('person_id', '');
-        this.setCookie('access_token', '');
-        //this.setCookie('user_name', ''); //keep this cookie
-        this.setCookie('login', '0');
+        var cookies = $cookies.getAll();
+        angular.forEach(cookies, function (v, k) {
+            $cookies.remove(k);
+            console.log("removing cookie: " + k);
+        });
     }
 
   return _cookieFactory;
