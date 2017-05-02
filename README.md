@@ -2,7 +2,7 @@
 Angular SPA Starter Project
 ------------------
 
-See it live at http://angular-spa-starter.herokuapp.com
+See it live at http://djohnsonkc-angular-spa-starter.herokuapp.com
 
 This app is a starter project for creating an SPA (single-page app) using AngularJS. I have included a nice 'scaleUp' animation for view changes to make things more interesting as well as a variety of performance optimization tips and features. Node.js is used to serve the SPA and is also used to provide other server-side features such as Gzip compression and enables client-side browser caching of assets to clients making requests to the app. 
 
